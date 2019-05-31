@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+    {{ message }}
+</div>
+
+<div id="app-2">
+    <span v-bind:title="message">
+        Mouse hover
+    </span>
+</div>
+
+<div id="app-3">
+    <p v-if="seen">Hello</p>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "안뇽"
+        }
+    })
+    
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            message: new Date()
+        }
+    })
+
+    var app3 = new Vue({
+        el: "#app-3",
+        data: {
+            seen: true
+        }
+    })
+</script>
